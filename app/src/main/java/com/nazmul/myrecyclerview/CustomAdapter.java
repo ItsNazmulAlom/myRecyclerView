@@ -18,14 +18,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private int imgList[];
 
     public CustomAdapter(Context context,String countryList[],int imgList[]){
-        this.context=context;
-        this.countryList=countryList;
-        this.imgList=imgList;
+        this.context = context;
+        this.countryList = countryList;
+        this.imgList = imgList;
 
     }
 
     @NonNull
-    @Override
     public CustomAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // infalte the item Layout
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items, parent, false);
@@ -35,9 +34,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomAdapter.MyViewHolder myHolder, int position) {
-        myHolder.txtView.setText(countryList[position]);
-        myHolder.imgCountry.setImageResource(imgList[position]);
+    public void onBindViewHolder(@NonNull CustomAdapter.MyViewHolder myHolder, final int position) {
+        myHolder.txtName.setText(countryList[position]);
+        myHolder.imgcountry.setImageResource(imgList[position]);
         // implement setOnClickListener event on item view.
         myHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +55,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageSwitcher imgCountry;
-        TextView txtView;
-        ImageView imgView;
+        TextView txtName;
+        ImageView imgcountry;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtView = itemView.findViewById(R.id.txt_name);
-            imgView = itemView.findViewById(R.id.img_country);
+            txtName = itemView.findViewById(R.id.txt_name);
+            imgcountry = itemView.findViewById(R.id.img_country);
 
         }
     }
