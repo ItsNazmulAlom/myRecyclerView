@@ -23,9 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
         // set a LinearLayoutManager with default vertical orientation
 
-         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        // LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
 
-         recyclerView.setLayoutManager(linearLayoutManager);
+
+        // set a LinearLayoutManager with default Horizontal orientation
+         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+
 
 
          // call the constructor of customAdapter to send the reference and data to Adapter
